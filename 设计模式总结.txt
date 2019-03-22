@@ -1,0 +1,49 @@
+工厂方法：只有你想不到的，没有我生产不出来的
+原型模式：一个变多个
+单例模式：天下无双
+适配器模式：霸王硬上弓
+装饰器模式：把自己打扮得帅帅的好找对象
+代理模式：请朋友帮我推荐工作
+模板方法模式：把妹都是有套路的，但具体实施还看个人
+观察者模式：盯着妹子看，一旦单身，马上趁虚而入
+策略模式：或者有钱，或者有颜
+
+SpringAOP代码片段
+public abstract class AspectJAopUtils {
+    public AspectJAopUtils() {
+    }
+
+    public static boolean isBeforeAdvice(Advisor anAdvisor) {
+        AspectJPrecedenceInformation precedenceInfo = getAspectJPrecedenceInformationFor(anAdvisor);
+        return precedenceInfo != null ? precedenceInfo.isBeforeAdvice() : anAdvisor.getAdvice() instanceof BeforeAdvice;
+    }
+
+    public static boolean isAfterAdvice(Advisor anAdvisor) {
+        AspectJPrecedenceInformation precedenceInfo = getAspectJPrecedenceInformationFor(anAdvisor);
+        return precedenceInfo != null ? precedenceInfo.isAfterAdvice() : anAdvisor.getAdvice() instanceof AfterAdvice;
+    }
+
+IOC代码片段
+ public static Calendar getInstance()
+    {
+        return createCalendar(TimeZone.getDefault(), Locale.getDefault(Locale.Category.FORMAT));
+    }
+
+DI代码片段
+@Target({ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Autowired {
+    boolean required() default true;
+}
+
+
+
+
+
+
+
+
+
+
+
